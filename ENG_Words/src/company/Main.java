@@ -211,8 +211,9 @@ public class Main {
     }
 
     public static boolean ConnectDB(String dbName){
-        String conStrUrl = "jdbc:sqlserver://DESKTOP-UF0PE6E\\SQLEXPRESS:57411;integratedSecurity=true;databaseName=" +dbName;
-
+        //String conStrUrl = "jdbc:sqlserver://DESKTOP-UF0PE6E\\SQLEXPRESS:57411;integratedSecurity=true;databaseName=" +dbName;
+        String conStrUrl ="jdbc:sqlserver://SQL5107.site4now.net\\SQLEXPRESS:1433;user=db_a846e3_vocabulary_admin;password=Fantomas09;databaseName=db_a846e3_vocabulary";
+        
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             con = DriverManager.getConnection(conStrUrl);
@@ -256,7 +257,7 @@ public class Main {
     public static int getMaxCountFromDB (){
         try {
             Statement query = con.createStatement();
-            String sqlStr = "SELECT COUNT(id) FROM [Vocabulary].[dbo].[words];";
+            String sqlStr = "SELECT COUNT(id) FROM words;";
             ResultSet max = query.executeQuery(sqlStr);
             int countMax = 0;
             while(max.next()){
