@@ -64,29 +64,7 @@ public class Main {
         System.out.println(String.format("Počet bodů je: %s z %s", correctCount, entryCount));
 
 
-        //Nakonec vypsat dalsi moznosti pokracovan
-        // restart, exit, přidej slovo
-
     }
-
-//    public static ExitContinueOptions getOptions() {
-//        ExitContinueOptions exitOptions = null;
-//        do {
-//            System.out.println("Jak chcete pokračovat? Napište \"restart\" pro novou lekci, nebo \"exit\" pro ukončení.");
-//            exitOptions = getOptionsEnum(scan.nextLine());
-//        }
-//        while (exitOptions == null);
-//        return exitOptions;
-//    }
-
-//    public static ExitContinueOptions getOptionsEnum(String optionsEntry){
-//        try{
-//            return ExitContinueOptions.valueOf(optionsEntry.toUpperCase());
-//        } catch (Exception ex){
-//            return null;
-//        }
-//    }
-
 
 
     public static String getOptions(){
@@ -211,9 +189,8 @@ public class Main {
     }
 
     public static boolean ConnectDB(String dbName){
-        //String conStrUrl = "jdbc:sqlserver://DESKTOP-UF0PE6E\\SQLEXPRESS:57411;integratedSecurity=true;databaseName=" +dbName;
-        String conStrUrl ="jdbc:sqlserver://SQL5107.site4now.net\\SQLEXPRESS:1433;user=db_a846e3_vocabulary_admin;password=Fantomas09;databaseName=db_a846e3_vocabulary";
-        
+        String conStrUrl = "jdbc:sqlserver://DESKTOP-UF0PE6E\\SQLEXPRESS:57411;integratedSecurity=true;databaseName=" +dbName;
+                
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             con = DriverManager.getConnection(conStrUrl);
